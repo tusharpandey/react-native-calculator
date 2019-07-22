@@ -4,7 +4,7 @@ import AppImage from './AppImage'
 
 
 export default class HomeScreen extends React.Component {
-
+  
   performTimeConsumingTask = async () => {
     var promise = new Promise(function (resolve, reject) {
       setTimeout(
@@ -19,7 +19,7 @@ export default class HomeScreen extends React.Component {
     const data = await this.performTimeConsumingTask();
 
     if (data !== null) {
-      this.props.navigation.navigate('Details');
+      this.props.navigation.navigate('details');
     }
   }
 

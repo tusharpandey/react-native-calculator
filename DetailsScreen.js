@@ -1,13 +1,16 @@
 import React from "react";
 import { View, Text, FlatList, StyleSheet, Alert } from "react-native";
-import Actionbar from './components/Actionbar'
 import ListComponent from "./components/ListComponent";
 
 export default class DetailsScreen extends React.Component {
+
+  static navigationOptions = {
+    title: 'Calculator',
+  };
+
   render() {
     return (
       <View>
-        <Actionbar name="MyApp" />
 
         <FlatList
           data={[
@@ -16,7 +19,7 @@ export default class DetailsScreen extends React.Component {
             {key: 'Multiplication'},
             {key: 'Divide'},
           ]}
-          renderItem={({item}) => <ListComponent name = {item.key}/>}
+          renderItem={({item}) => <ListComponent name = {item.key} navigation={this.props.navigation}/>}
         />
 
       </View>

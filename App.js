@@ -1,7 +1,8 @@
 import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation'; // Version can be specified in package.json
+import { createAppContainer, createStackNavigator, createSwitchNavigator } from 'react-navigation'; // Version can be specified in package.json
 import DetailsScreen from './DetailsScreen'
 import HomeScreen from './HomeScreen'
+import Operation from './Operation'
 
 export default class App extends React.Component {
   render() {
@@ -9,10 +10,12 @@ export default class App extends React.Component {
   }
 }
 
+const AppStack = createStackNavigator({ details: DetailsScreen, operation: Operation });
+
 const AppNavigator = createSwitchNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen,
+    appStack: AppStack,
   },
   {
     initialRouteName: 'Home',
