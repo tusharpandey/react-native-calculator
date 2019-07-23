@@ -43,18 +43,26 @@ export default class Operation extends React.Component {
     }
 
     getResult = (param,input1,input2) => {
+        var result = 0;
         switch (param) {
             case Constants.ADDITION:
-                return input1 + input2
+                result =  eval(input1) + eval(input2)
+                break
             case Constants.SUBTRACTION:
-                return input1 - input2
+                result = eval(input1) - eval(input2)
+                break
             case Constants.MULTIPLICATION:
-                return input1 * input2
+                result =  eval(input1) * eval(input2)
+                break
             case Constants.DIVIDE:
-                return input1 / input2
+                result = eval(input1) / eval(input2)
+                break
             default:
-                return 0
+                result = 0
+                break
         }
+
+        return isNaN(result) ? 0 : result 
     }
 
     getImageUrl = (param) => {
