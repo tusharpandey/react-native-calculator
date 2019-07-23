@@ -1,11 +1,11 @@
 import React from 'react'
-import { View, Text, StyleSheet,TouchableWithoutFeedback } from 'react-native'
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 
 export default class ListComponent extends React.Component {
     render() {
 
         return (
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('operation')}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('operation', { operation: this.props.name, })}>
                 <View>
                     <Text style={styles.actionbar}>{this.props.name}</Text>
                 </View>
