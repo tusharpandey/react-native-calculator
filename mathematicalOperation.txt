@@ -1,1 +1,1 @@
-
+{ "Operations" : ["Addition", "Subtraction", "Multiplication", "Divide"] }
